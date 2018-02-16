@@ -40,9 +40,6 @@ def redrawAll():
             columnNum += 1
         rowNum += 1
 
-"""pickComputerShips():
-    rowShip1 = randint(1,9)"""
-
 def mouseClick(event):
     row = event.y//50
     column = event.x//50
@@ -64,14 +61,11 @@ if __name__ == '__main__':
     data['hit'] = RectangleAsset(50,50,LineStyle(1,hit),hit)
     data['ship'] = RectangleAsset(50,50,LineStyle(1,ship),ship)
     data['numShips'] = 0
-    data['gameBoardUpdate'] = []
     
     data['gameBoard1'] = buildBoard()
     data['gameBoard2'] = buildBoard()
     redrawAll()
     
-    """nextGen = TextAsset('NextGeneration')
-    Sprite(nextGen,(190,520))
-    
-    App().listenMouseEvent('click',mouseClick)"""
+    Sprite(TextAsset('Player'),(100,450))
+    App().listenMouseEvent('click',mouseClick)
     App().run()
