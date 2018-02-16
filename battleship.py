@@ -66,6 +66,7 @@ if __name__ == '__main__':
     data['gameBoard2'] = buildBoard()
     redrawAll()
     
-    Sprite(TextAsset('Player'),(100,450))
+    Sprite(TextAsset('Player',fill=black,style="bold 50pt Times"),(150,450))
+    Sprite(TextAsset('Computer',fill=black,style="bold 50pt Times"),(450,450))
     App().listenMouseEvent('click',mouseClick)
     App().run()
