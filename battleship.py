@@ -67,6 +67,6 @@ if __name__ == '__main__':
     redrawAll()
     
     Sprite(TextAsset('Player',fill=black,style="bold 50pt Times"),(150,450))
-    Sprite(TextAsset('Computer',fill=black,style="bold 50pt Times"),(450,450))
+    Sprite(TextAsset('Computer',fill=black,style="bold 50pt Times"),(650,450))
     App().listenMouseEvent('click',mouseClick)
     App().run()
