@@ -49,6 +49,7 @@ def mouseClick(event):
     if data['numShips'] < 3:
         data['gameBoard1'][row][column] == 3
         data['numShips'] += 1
+    redrawAll()
     
 
 if __name__ == '__main__':
