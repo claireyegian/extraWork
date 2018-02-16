@@ -58,7 +58,7 @@ if __name__ == '__main__':
     data['gameBoardUpdate'] = []
     
     data['gameBoard1'] = buildBoard()
-    data['gameBaord2'] = buildBoard()
+    data['gameBoard2'] = buildBoard()
     redrawAll()
     
     """nextGen = TextAsset('NextGeneration')
