@@ -3,7 +3,7 @@
 #battleship.py - creates the game battleship
 
 from random import randint
-from game import *
+from ggame import *
 
 #Creates gameboard
 def buildBoard():
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     data['numShips'] = 0
     data['gameBoardUpdate'] = []
     
-    data['gameBoard'] = gameBoard()
+    data['gameBoard'] = buildBoard()
     redrawAll()
     
     """nextGen = TextAsset('NextGeneration')
