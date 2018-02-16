@@ -15,11 +15,11 @@ def redrawAll():
     for row in data['gameBoard1']:
         columnNum = 0
         for column in row:
-            if data['gameBoard'][rowNum][columnNum] == 0:
+            if data['gameBoard1'][rowNum][columnNum] == 0:
                 Sprite(data['empty'],(columnNum*50,rowNum*50))
-            if data['gameBoard'][rowNum][columnNum] == 1:
+            if data['gameBoard1'][rowNum][columnNum] == 1:
                 Sprite(data['miss'],(columnNum*50,rowNum*50))
-            if data['gameBoard'][rowNum][columnNum] == 2:
+            if data['gameBoard1'][rowNum][columnNum] == 2:
                 Sprite(data['hit'],(columnNum*50,rowNum*50))
             columnNum += 1
         rowNum += 1
@@ -27,23 +27,23 @@ def redrawAll():
     for row in data['gameBoard2']:
         columnNum = 0
         for column in row:
-            if data['gameBoard'][rowNum][columnNum] == 0:
+            if data['gameBoard2'][rowNum][columnNum] == 0:
                 Sprite(data['empty'],((columnNum*50)+550,rowNum*50))
-            if data['gameBoard'][rowNum][columnNum] == 1:
+            if data['gameBoard2'][rowNum][columnNum] == 1:
                 Sprite(data['miss'],((columnNum*50)+550,rowNum*50))
-            if data['gameBoard'][rowNum][columnNum] == 2:
+            if data['gameBoard2'][rowNum][columnNum] == 2:
                 Sprite(data['hit'],((columnNum*50)+550,rowNum*50))
             columnNum += 1
         rowNum += 1
 
 """pickComputerShips():
-    rowShip1 = randint(1,9)"""
+    rowShip1 = randint(1,9)
 
 def mouseClick(event):
     row = event.y//50
     column = event.x//50
     if data['numShips'] < 3:
-        data['gameBoard'][row][column] == 
+        data['gameBoard'][row][column] == """
 
 if __name__ == '__main__':
     empty = Color(0xffffff,1) #Colors used in program
@@ -57,7 +57,8 @@ if __name__ == '__main__':
     data['numShips'] = 0
     data['gameBoardUpdate'] = []
     
-    data['gameBoard'] = buildBoard()
+    data['gameBoard1'] = buildBoard()
+    data['gameBaord2'] = buildBoard()
     redrawAll()
     
     """nextGen = TextAsset('NextGeneration')
