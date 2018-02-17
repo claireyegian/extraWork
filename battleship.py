@@ -48,6 +48,11 @@ def mouseClick(event):
         data['numShips1'] += 1
     redrawAll()
     pickComputerShips()
+    if data['gameBoard2'][row][column] == 0:
+        data['gameBoard2'][row][column] = 1
+    if data['gameBoard2'][row][column] == 3:
+        data['gameBoard2'][row][column] = 2
+    redrawAll()
 
 def pickComputerShips():
     while data['numShips2'] < 3:
