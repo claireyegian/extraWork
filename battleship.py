@@ -22,7 +22,7 @@ def redrawAll():
             if data['gameBoard1'][rowNum][columnNum] == 2:
                 Sprite(data['hit'],(columnNum*50,rowNum*50))
             if data['gameBoard1'][rowNum][columnNum] == 3:
-                Sprite(data['ship'],(columnNum*50,rowNum*50))
+                Sprite(data['ship1'],(columnNum*50,rowNum*50))
             columnNum += 1
         rowNum += 1
     rowNum = 0
@@ -36,7 +36,7 @@ def redrawAll():
             if data['gameBoard2'][rowNum][columnNum] == 2:
                 Sprite(data['hit'],((columnNum*50)+550,rowNum*50))
             if data['gameBoard2'][rowNum][columnNum] == 3:
-                Sprite(data['ship'],((columnNum*50)+550,rowNum*50))
+                Sprite(data['ship2'],((columnNum*50)+550,rowNum*50))
             columnNum += 1
         rowNum += 1
 
@@ -46,7 +46,7 @@ def mouseClick(event):
     if data['numShips1'] < 3:
         data['gameBoard1'][row][column] = 3
         data['numShips1'] += 1
-    redrawAll()
+        redrawAll()
     elif data['numShips1'] == 3:
         pickComputerShips()
         if data['gameBoard2'][row][column] == 0:
@@ -73,7 +73,8 @@ if __name__ == '__main__':
     data['empty'] = RectangleAsset(50,50,LineStyle(1,miss),empty)
     data['miss'] = RectangleAsset(50,50,LineStyle(1,miss),miss)
     data['hit'] = RectangleAsset(50,50,LineStyle(1,hit),hit)
-    data['ship'] = RectangleAsset(50,50,LineStyle(1,ship),ship)
+    data['ship1'] = RectangleAsset(50,50,LineStyle(1,ship),ship)
+    data['ship2'] = RectangleAsset(50,50,LineStyle(1,empty),miss)
     data['numShips1'] = 0
     data['numShips2'] = 0
     
