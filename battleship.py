@@ -55,6 +55,14 @@ def mouseClick(event):
             data['gameBoard2'][row][column-11] = 2
         redrawAll()
 
+def computerTurn():
+    row = randint(0,8)
+    column = randint(0,8)
+    if data['gameBoard1'][row][column] == 0:
+        data['gameBoard1'][row][column] = 1
+    if data['gameBoard1'][row][column] == 3:
+        data['gameBoard1'][row][column] = 2  
+
 def pickComputerShips():
     while data['numShips2'] < 3:
         row = randint(0,8)
