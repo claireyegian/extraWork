@@ -74,7 +74,7 @@ if __name__ == '__main__':
     data['miss'] = RectangleAsset(50,50,LineStyle(1,miss),miss)
     data['hit'] = RectangleAsset(50,50,LineStyle(1,hit),hit)
     data['ship1'] = RectangleAsset(50,50,LineStyle(1,ship),ship)
-    data['ship2'] = RectangleAsset(50,50,LineStyle(1,empty),miss)
+    data['ship2'] = RectangleAsset(50,50,LineStyle(1,miss),empty)
     data['numShips1'] = 0
     data['numShips2'] = 0
     
