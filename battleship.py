@@ -53,7 +53,7 @@ def mouseClick(event):
             data['gameBoard2'][row][column-11] = 1
         if data['gameBoard2'][row][column-11] == 3:
             data['gameBoard2'][row][column-11] = 2
-        pickComputerShips()
+        computerTurn()
         redrawAll()
 
 def computerTurn():
