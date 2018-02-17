@@ -43,7 +43,7 @@ def redrawAll():
 def mouseClick(event):
     row = event.y//50
     column = event.x//50
-    while data['numShips1'] < 3:
+    if data['numShips1'] < 3:
         data['gameBoard1'][row][column] = 3
         data['numShips1'] += 1
     redrawAll()
@@ -61,8 +61,6 @@ def pickComputerShips():
         if data['gameBoard2'][row][column] != 3:
             data['gameBoard2'][row][column] = 3
             data['numShips2'] += 1
-    redrawAll()
-    
 
 if __name__ == '__main__':
     empty = Color(0xffffff,1) #Colors used in program
