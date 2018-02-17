@@ -43,16 +43,16 @@ def redrawAll():
 def mouseClick(event):
     row = event.y//50
     column = event.x//50
-    if data['numShips'] < 3:
+    if data['numShips1'] < 3:
         data['gameBoard1'][row][column] = 3
         data['numShips1'] += 1
     redrawAll()
     pickComputerShips()
 
-pickComputerShips():
+def pickComputerShips():
     while data['numShips2'] < 3:
-        row = randint(1,10)
-        column = randint(1,10)
+        row = randint(0,9)
+        column = randint(0,9)
         if data['gameBoard2'][row][column] != 3:
             data['gameBoard2'][row][column] = 3
             data['numShips2'] += 1
