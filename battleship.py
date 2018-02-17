@@ -45,7 +45,17 @@ def mouseClick(event):
     column = event.x//50
     if data['numShips'] < 3:
         data['gameBoard1'][row][column] = 3
-        data['numShips'] += 1
+        data['numShips1'] += 1
+    redrawAll()
+    pickComputerShips()
+
+pickComputerShips():
+    while data['numShips2'] < 3:
+        row = randint(1,10)
+        column = randint(1,10)
+        if data['gameBoard2'][row][column] != 3:
+            data['gameBoard2'][row][column] = 3
+            data['numShips2'] += 1
     redrawAll()
     
 
@@ -60,7 +70,8 @@ if __name__ == '__main__':
     data['miss'] = RectangleAsset(50,50,LineStyle(1,miss),miss)
     data['hit'] = RectangleAsset(50,50,LineStyle(1,hit),hit)
     data['ship'] = RectangleAsset(50,50,LineStyle(1,ship),ship)
-    data['numShips'] = 0
+    data['numShips1'] = 0
+    data['numShips2'] = 0
     
     data['gameBoard1'] = buildBoard()
     data['gameBoard2'] = buildBoard()
