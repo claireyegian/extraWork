@@ -21,7 +21,7 @@ def redrawAll():
                 Sprite(data['miss'],(columnNum*50,rowNum*50))
             if data['gameBoard1'][rowNum][columnNum] == 2:
                 Sprite(data['hit'],(columnNum*50,rowNum*50))
-            if data['gameBoard2'][rowNum][columnNum] == 3:
+            if data['gameBoard1'][rowNum][columnNum] == 3:
                 Sprite(data['ship'],(columnNum*50,rowNum*50))
             columnNum += 1
         rowNum += 1
@@ -44,7 +44,7 @@ def mouseClick(event):
     row = event.y//50
     column = event.x//50
     if data['numShips'] < 3:
-        data['gameBoard1'][row][column] == 3
+        data['gameBoard1'][row][column] = 3
         data['numShips'] += 1
     redrawAll()
     
