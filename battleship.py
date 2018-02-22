@@ -55,13 +55,17 @@ def mouseClick(event):
                 data['gameBoard2'][row][column-11] = 1
             if data['gameBoard2'][row][column-11] == 3:
                 data['gameBoard2'][row][column-11] = 2
+                data['shipsFound1'] += 1
         elif column <= 9:
             if data['gameBoard2'][row][column] == 0:
                 data['gameBoard2'][row][column] = 1
             if data['gameBoard2'][row][column] == 3:
                 data['gameBoard2'][row][column] = 2
+                data['shipsFound1'] += 1
         computerTurn()
         redrawAll()
+    if data['shipsFound1'] == 3:
+        Sprite(TextAsset('Player Wins',fill=black,style="bold 100pt Times"),(0,150))
 
 def computerTurn():
     row = randint(0,8)
@@ -71,6 +75,9 @@ def computerTurn():
             data['gameBoard1'][row][column] = 1
         if data['gameBoard1'][row][column] == 3:
             data['gameBoard1'][row][column] = 2
+            data['shipsFound2'] += 1
+    if data['shipsFound2'] == 3:
+        Sprite(TextAsset('Computer Wins',fill=black,style="bold 100pt Times"),(0,150))
     redrawAll()
 
 def pickComputerShips():
@@ -95,6 +102,8 @@ if __name__ == '__main__':
     data['ship2'] = RectangleAsset(50,50,LineStyle(1,miss),empty)
     data['numShips1'] = 0
     data['numShips2'] = 0
+    data['shipsFound1'] = 0
+    data['shipsFound2'] = 0
     
     data['gameBoard1'] = buildBoard()
     data['gameBoard2'] = buildBoard()
