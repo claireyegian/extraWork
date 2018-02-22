@@ -44,9 +44,10 @@ def mouseClick(event):
     row = event.y//50
     column = event.x//50
     if data['numShips1'] < 3:
-        data['gameBoard1'][row][column] = 3
-        data['numShips1'] += 1
-        redrawAll()
+        if data['gameBoard1'][row][column] != 3:
+            data['gameBoard1'][row][column] = 3
+            data['numShips1'] += 1
+            redrawAll()
     elif data['numShips1'] == 3:
         pickComputerShips()
         if column > 9:
