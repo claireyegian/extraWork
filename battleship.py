@@ -65,7 +65,7 @@ def mouseClick(event):
         computerTurn()
         redrawAll()
     if data['shipsFound1'] == 3:
-        Sprite(TextAsset('Player Wins',fill=black,style="bold 100pt Times"),(0,150))
+        Sprite(TextAsset('Player Wins',fill=black,style="bold 100pt Times"),(250,50))
 
 def computerTurn():
     row = randint(0,8)
@@ -76,9 +76,9 @@ def computerTurn():
         if data['gameBoard1'][row][column] == 3:
             data['gameBoard1'][row][column] = 2
             data['shipsFound2'] += 1
-    if data['shipsFound2'] == 3:
-        Sprite(TextAsset('Computer Wins',fill=black,style="bold 100pt Times"),(0,150))
     redrawAll()
+    if data['shipsFound2'] == 3:
+        Sprite(TextAsset('Computer Wins',fill=black,style="bold 100pt Times"),(250,50))
 
 def pickComputerShips():
     while data['numShips2'] < 3:
