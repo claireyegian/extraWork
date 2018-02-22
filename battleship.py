@@ -49,10 +49,16 @@ def mouseClick(event):
         redrawAll()
     elif data['numShips1'] == 3:
         pickComputerShips()
-        if data['gameBoard2'][row][column-11] == 0:
-            data['gameBoard2'][row][column-11] = 1
-        if data['gameBoard2'][row][column-11] == 3:
-            data['gameBoard2'][row][column-11] = 2
+        if column > 9:
+            if data['gameBoard2'][row][column-11] == 0:
+                data['gameBoard2'][row][column-11] = 1
+            if data['gameBoard2'][row][column-11] == 3:
+                data['gameBoard2'][row][column-11] = 2
+        elif column <= 9:
+            if data['gameBoard2'][row][column] == 0:
+                data['gameBoard2'][row][column] = 1
+            if data['gameBoard2'][row][column] == 3:
+                data['gameBoard2'][row][column] = 2
         computerTurn()
         redrawAll()
 
