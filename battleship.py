@@ -40,6 +40,7 @@ def redrawAll():
             columnNum += 1
         rowNum += 1
 
+#finds where the player clicked and if there were any computer ships in the spot; decides if player wins
 def mouseClick(event):
     row = event.y//50
     column = event.x//50
@@ -63,10 +64,10 @@ def mouseClick(event):
                 data['gameBoard2'][row][column] = 2
                 data['shipsFound1'] += 1
         computerTurn()
-        redrawAll()
     if data['shipsFound1'] == 3:
         Sprite(TextAsset('Player Wins',fill=black,style="bold 100pt Times"),(250,50))
 
+#generates random computer guess and finds if there were any player ships in the spot; decides if computer wins
 def computerTurn():
     row = randint(0,8)
     column = randint(0,8)
@@ -82,6 +83,7 @@ def computerTurn():
     if data['shipsFound2'] == 3:
         Sprite(TextAsset('Computer Wins',fill=black,style="bold 100pt Times"),(250,50))
 
+#picks three random ships for the computer
 def pickComputerShips():
     while data['numShips2'] < 3:
         row = randint(0,8)
