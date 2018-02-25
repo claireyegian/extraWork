@@ -76,6 +76,8 @@ def computerTurn():
         if data['gameBoard1'][row][column] == 3:
             data['gameBoard1'][row][column] = 2
             data['shipsFound2'] += 1
+    else:
+        computerTurn()
     redrawAll()
     if data['shipsFound2'] == 3:
         Sprite(TextAsset('Computer Wins',fill=black,style="bold 100pt Times"),(250,50))
