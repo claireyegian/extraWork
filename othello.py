@@ -61,6 +61,45 @@ def winner():
     else:
         print('tie')
 
+def flipPieces(row,column):
+    flipEast(row,column)
+    flipWest(row,column)
+    flipNorth(row,column)
+    flipSouth(row,column)
+    flipNorthWest(row,column)
+    flipNorthEast(row,column)
+    flipSouthWest(row,column)
+    flipSouthEast(row,column) 
+
+def flipEast(row,column):
+    column += 1
+    currentState = data['gameBoard'][row][column]
+    while column <= 8:
+        if data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != current state:
+            column += 1
+        
+
+def flipWest(row,column):
+    
+
+def flipNorth(row,column):
+    
+
+def flipSouth(row,column):
+    
+
+def flipNorthWest(row,column):
+    
+
+def flipNorthEast(row,column):
+    
+
+def flipSouthWest(row,column):
+    
+
+def flipSouthEast(row,column):
+    
+
 def mouseClick(event):
     row = event.y//50
     column = event.x//50
