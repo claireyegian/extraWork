@@ -37,9 +37,9 @@ def boardFull():
             columnNum += 1
         rowNum += 1
     if emptyCount > 0:
-        print('False')
+        return('False')
     elif emptyCount == 0:
-        print('True')
+        return('True')
 
 def winner():
     computerCount = 0
@@ -66,7 +66,13 @@ def mouseClick(event):
     column = event.x//50
     if data['gameBoard'][rowNum][columnNum] == 0:
         Sprite(data['empty'],(columnNum*50,rowNum*50))
-                Sprite(data['player'],(columnNum*50,rowNum*50))
+        Sprite(data['player'],(columnNum*50,rowNum*50))
+        if boardFull() == 'False':
+            flipPieces(row,column)
+            if boardFull() == 'True':
+                winner()
+        elif boardFull() == 'True':
+                winner()
 
 if __name__ == '__main__':
     computer = Color(0xffffff,1) #Colors used in program
