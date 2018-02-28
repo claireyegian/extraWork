@@ -11,6 +11,8 @@ def buildBoard():
     
 #Prints gameboard (with any updates)
 def redrawAll():
+    for item in App().spritelist[:]:
+        item.destroy()
     rowNum = 0
     for row in data['gameBoard1']:
         columnNum = 0
