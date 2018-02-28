@@ -26,6 +26,48 @@ def redrawAll():
             columnNum += 1
         rowNum += 1
 
+def boardFull():
+    emptyCount = 1
+    rowNum = 0
+    for row in data['gameBoard']:
+        columnNum = 0
+        for column in row:
+            if data['gameBoard'][rowNum][columnNum] == 0:
+                emptyCount += 1
+            columnNum += 1
+        rowNum += 1
+    if emptyCount > 0:
+        print('False')
+    elif emptyCount == 0:
+        print('True')
+
+def winner():
+    computerCount = 0
+    playerCount = 0
+    rowNum = 0
+    for row in data['gameBoard']:
+        columnNum = 0
+        for column in row:
+            if data['gameBoard'][rowNum][columnNum] == 1:
+                playerCount += 1
+            elif data['gameBoard'][rowNum][columnNum] == 2:
+                computerCount += 1
+            columnNum += 1
+        rowNum += 1
+    if computerCount > playerCount:
+        print('computer wins')
+    elif playerCount > computerCount:
+        print('player wins')
+    else:
+        print('tie')
+
+def mouseClick(event):
+    row = event.y//50
+    column = event.x//50
+    if data['gameBoard'][rowNum][columnNum] == 0:
+        Sprite(data['empty'],(columnNum*50,rowNum*50))
+                Sprite(data['player'],(columnNum*50,rowNum*50))
+
 if __name__ == '__main__':
     computer = Color(0xffffff,1) #Colors used in program
     empty = Color(0x7CACE4,1)
@@ -39,6 +81,7 @@ if __name__ == '__main__':
 
     data['gameBoard'] = buildBoard()
     redrawAll()
+    boardFull()
     
-    """App().listenMouseEvent('click',mouseClick)"""
+    App().listenMouseEvent('click',mouseClick)
     App().run()
