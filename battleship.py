@@ -41,6 +41,8 @@ def redrawAll():
                 Sprite(data['ship2'],((columnNum*50)+550,rowNum*50))
             columnNum += 1
         rowNum += 1
+    Sprite(TextAsset('Player',fill=black,style="bold 50pt Times"),(150,450))
+    Sprite(TextAsset('Computer',fill=black,style="bold 50pt Times"),(650,450))
 
 #finds where the player clicked and if there were any computer ships in the spot; decides if player wins
 def mouseClick(event):
@@ -115,7 +117,5 @@ if __name__ == '__main__':
     data['gameBoard2'] = buildBoard()
     redrawAll()
     
-    Sprite(TextAsset('Player',fill=black,style="bold 50pt Times"),(150,450))
-    Sprite(TextAsset('Computer',fill=black,style="bold 50pt Times"),(650,450))
     App().listenMouseEvent('click',mouseClick)
     App().run()
