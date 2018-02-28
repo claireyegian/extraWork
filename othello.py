@@ -71,7 +71,7 @@ def flipPieces(row,column):
     flipSouthWest(row,column)
     flipSouthEast(row,column) 
 
-def flipEast(row,column):
+"""def flipEast(row,column):
     column += 1
     currentState = data['gameBoard'][row][column]
     while column <= 8:
@@ -97,15 +97,15 @@ def flipNorthEast(row,column):
 def flipSouthWest(row,column):
     
 
-def flipSouthEast(row,column):
+def flipSouthEast(row,column):"""
     
 
 def mouseClick(event):
     row = event.y//50
     column = event.x//50
-    if data['gameBoard'][rowNum][columnNum] == 0:
-        Sprite(data['empty'],(columnNum*50,rowNum*50))
-        Sprite(data['player'],(columnNum*50,rowNum*50))
+    if data['gameBoard'][row][column] == 0:
+        Sprite(data['empty'],(column*50,row*50))
+        Sprite(data['player'],(column*50,row*50))
         if boardFull() == 'False':
             flipPieces(row,column)
             if boardFull() == 'True':
