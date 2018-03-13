@@ -76,10 +76,10 @@ def flipEast(row,column):
     currentState = data['gameBoard'][row][column-1]
     flipNum = 0
     while column <= 8:
-        if data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != current state:
+        if data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != currentState:
             flipNum += 1
             column += 1
-        elif data['gameBoard'][row][column] == current state:
+        elif data['gameBoard'][row][column] == currentState:
             if flipNum > 0:
                 print('flip')
             elif flipNum == 0:
