@@ -27,7 +27,7 @@ def redrawAll():
         rowNum += 1
 
 def boardFull():
-    emptyCount = 1
+    emptyCount = 0
     rowNum = 0
     for row in data['gameBoard']:
         columnNum = 0
@@ -71,15 +71,24 @@ def flipPieces(row,column):
     flipSouthWest(row,column)
     flipSouthEast(row,column) 
 
-"""def flipEast(row,column):
+def flipEast(row,column):
     column += 1
-    currentState = data['gameBoard'][row][column]
+    currentState = data['gameBoard'][row][column-1]
+    flipNum = 0
     while column <= 8:
         if data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != current state:
+            flipNum += 1
             column += 1
+        elif data['gameBoard'][row][column] == current state:
+            if flipNum > 0:
+                print('flip')
+            elif flipNum == 0:
+                break
+        elif data['gameBoard'][row][column] == 0:
+            break
         
 
-def flipWest(row,column):
+"""def flipWest(row,column):
     
 
 def flipNorth(row,column):
