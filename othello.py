@@ -75,9 +75,9 @@ def flipEast(row,column):
     column += 1
     currentState = data['gameBoard'][row][column-1]
     if currentState == 1:
-        oppositeState == 2
+        oppositeState = 2
     if currentState == 2:
-        oppositeState == 1 
+        oppositeState = 1 
     while data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != currentState:
         data['gameBoard'][row][column+1] = oppositeState
     redrawAll()  
@@ -86,9 +86,9 @@ def flipWest(row,column):
     column -= 1
     currentState = data['gameBoard'][row][column+1]
     if currentState == 1:
-        oppositeState == 2
+        oppositeState = 2
     if currentState == 2:
-        oppositeState == 1 
+        oppositeState = 1 
     while data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != currentState:
         data['gameBoard'][row][column-1] = oppositeState
     redrawAll() 
