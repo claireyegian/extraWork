@@ -112,22 +112,110 @@ def flipWest(row,column):
                 data['gameBoard'][row][ogColumn] = 2
                 ogColumn -= 1
 
-"""def flipNorth(row,column):
-    
+def flipNorth(row,column):
+    ogRow = row
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            row -= 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
+            while ogRow <= row:
+                data['gameBoard'][ogRow][column] = 2
+                ogRow -= 1
 
 def flipSouth(row,column):
-    
+    ogRow = row
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            row += 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
+            while ogRow <= row:
+                data['gameBoard'][ogRow][column] = 2
+                ogRow += 1
 
 def flipNorthWest(row,column):
+    ogRow = row
+    ogColumn = column
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            row -= 1
+            column -= 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
+            while ogRow <= row and ogColumn <= column:
+                data['gameBoard'][ogRow][ogColumn] = 2
+                ogRow -= 1
+                ogColumn -= 1
     
 
 def flipNorthEast(row,column):
+    ogRow = row
+    ogColumn = column
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            row -= 1
+            column += 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
+            while ogRow <= row and ogColumn <= column:
+                data['gameBoard'][ogRow][ogColumn] = 2
+                ogRow -= 1
+                ogColumn += 1
     
 
 def flipSouthWest(row,column):
+    ogRow = row
+    ogColumn = column
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            row += 1
+            column -= 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
+            while ogRow <= row and ogColumn <= column:
+                data['gameBoard'][ogRow][ogColumn] = 2
+                ogRow += 1
+                ogColumn -= 1
     
 
-def flipSouthEast(row,column):"""
+def flipSouthEast(row,column):
+    ogRow = row
+    ogColumn = column
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            row += 1
+            column += 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
+            while ogRow <= row and ogColumn <= column:
+                data['gameBoard'][ogRow][ogColumn] = 2
+                ogRow += 1
+                ogColumn += 1
     
 
 def mouseClick(event):
