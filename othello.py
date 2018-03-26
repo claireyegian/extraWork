@@ -70,6 +70,7 @@ def flipPieces(row,column):
     flipNorthEast(row,column)
     flipSouthWest(row,column)
     flipSouthEast(row,column) 
+    redrawAll()
 
 def flipEast(row,column):
     ogColumn = column
@@ -81,10 +82,10 @@ def flipEast(row,column):
         elif data['gameBoard'][row][column] == 0:
             break
         elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
             while ogColumn <= column:
                 data['gameBoard'][row][ogColumn] = 2
                 ogColumn += 1
-    redrawAll()
     
     """column += 1
     currentState = data['gameBoard'][row][column-1]
@@ -97,15 +98,19 @@ def flipEast(row,column):
         redrawAll()  """
 
 def flipWest(row,column):
-    column -= 1
-    currentState = data['gameBoard'][row][column+1]
-    if currentState == 1:
-        oppositeState = 2
-    elif currentState == 2:
-        oppositeState = 1 
-    while data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != currentState:
-        data['gameBoard'][row][column] = oppositeState
-        redrawAll() 
+    ogColumn = column
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            column -= 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            blackSquare = 1
+            while ogColumn <= column:
+                data['gameBoard'][row][ogColumn] = 2
+                ogColumn -= 1
 
 """def flipNorth(row,column):
     
