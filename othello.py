@@ -72,7 +72,21 @@ def flipPieces(row,column):
     flipSouthEast(row,column) 
 
 def flipEast(row,column):
-    column += 1
+    ogColumn = column
+    blackSquare = 0
+    while blackSquare < 1:
+        if data['gameBoard'][row][column] == 1:
+            blackSquare = 0
+            column += 1
+        elif data['gameBoard'][row][column] == 0:
+            break
+        elif data['gameBoard'][row][column] == 2:
+            while ogColumn <= column:
+                data['gameBoard'][row][ogColumn] = 2
+                ogColumn += 1
+    redrawAll()
+    
+    """column += 1
     currentState = data['gameBoard'][row][column-1]
     if currentState == 1:
         oppositeState = 2
@@ -80,7 +94,7 @@ def flipEast(row,column):
         oppositeState = 1 
     while data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != currentState:
         data['gameBoard'][row][column] = oppositeState
-        redrawAll()  
+        redrawAll()  """
 
 def flipWest(row,column):
     column -= 1
