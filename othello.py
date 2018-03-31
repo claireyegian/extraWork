@@ -86,16 +86,7 @@ def flipEast(row,column):
             while ogColumn <= column:
                 data['gameBoard'][row][ogColumn] = 2
                 ogColumn += 1
-    
-    """column += 1
-    currentState = data['gameBoard'][row][column-1]
-    if currentState == 1:
-        oppositeState = 2
-    if currentState == 2:
-        oppositeState = 1 
-    while data['gameBoard'][row][column] != 0 and data['gameBoard'][row][column] != currentState:
-        data['gameBoard'][row][column] = oppositeState
-        redrawAll()  """
+            break
 
 def flipWest(row,column):
     ogColumn = column
@@ -111,6 +102,7 @@ def flipWest(row,column):
             while ogColumn <= column:
                 data['gameBoard'][row][ogColumn] = 2
                 ogColumn -= 1
+            break
 
 def flipNorth(row,column):
     ogRow = row
@@ -126,6 +118,7 @@ def flipNorth(row,column):
             while ogRow <= row:
                 data['gameBoard'][ogRow][column] = 2
                 ogRow -= 1
+            break
 
 def flipSouth(row,column):
     ogRow = row
@@ -141,6 +134,7 @@ def flipSouth(row,column):
             while ogRow <= row:
                 data['gameBoard'][ogRow][column] = 2
                 ogRow += 1
+            break
 
 def flipNorthWest(row,column):
     ogRow = row
@@ -159,6 +153,7 @@ def flipNorthWest(row,column):
                 data['gameBoard'][ogRow][ogColumn] = 2
                 ogRow -= 1
                 ogColumn -= 1
+            break
     
 
 def flipNorthEast(row,column):
@@ -178,6 +173,7 @@ def flipNorthEast(row,column):
                 data['gameBoard'][ogRow][ogColumn] = 2
                 ogRow -= 1
                 ogColumn += 1
+            break
     
 
 def flipSouthWest(row,column):
@@ -197,6 +193,7 @@ def flipSouthWest(row,column):
                 data['gameBoard'][ogRow][ogColumn] = 2
                 ogRow += 1
                 ogColumn -= 1
+            break
     
 
 def flipSouthEast(row,column):
@@ -216,6 +213,7 @@ def flipSouthEast(row,column):
                 data['gameBoard'][ogRow][ogColumn] = 2
                 ogRow += 1
                 ogColumn += 1
+            break
     
 
 def mouseClick(event):
